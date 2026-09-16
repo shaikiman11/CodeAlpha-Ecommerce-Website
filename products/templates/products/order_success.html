@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Successful - My E-Commerce Store</title>
+    <link rel="stylesheet" href="{% static 'products/style.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🛒 My E-Commerce Store</h1>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/cart/">Cart</a>
+
+            {% if user.is_authenticated %}
+                <span>Welcome, {{ user.username }}</span>
+                <a href="/logout/">Logout</a>
+            {% else %}
+                <a href="/login/">Login</a>
+                <a href="/register/">Register</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <div class="form-box">
+
+        <h2>🎉 Order Placed Successfully!</h2>
+
+        <p>
+            Thank you for your order.
+        </p>
+
+        <p>
+            Your order has been saved successfully.
+        </p>
+
+        <a class="button" href="/">
+            Continue Shopping
+        </a>
+
+    </div>
+
+</body>
+</html>
